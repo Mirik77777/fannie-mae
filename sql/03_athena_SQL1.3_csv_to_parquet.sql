@@ -1,0 +1,47 @@
+-- To convert CSV to Parquet with needed columns
+CREATE TABLE individual_cw.fannie_parquet
+WITH (
+    format = 'PARQUET',
+    parquet_compression = 'SNAPPY',
+    external_location = 's3://fanniemaedataraw/individual_cw_parquet/'
+) AS
+SELECT
+    col1    AS loan_identifier,
+    col2    AS monthly_reporting_period,
+    col3    AS channel,
+    col4    AS seller_name,
+    col5    AS servicer_name,
+    col7    AS original_interest_rate,
+    col8    AS current_interest_rate,
+    col9    AS original_upb,
+    col11   AS current_actual_upb,
+    col12   AS original_loan_term,
+    col13   AS origination_date,
+    col14   AS first_payment_date,
+    col15   AS loan_age,
+    col17   AS remaining_months_to_maturity,
+    col18   AS maturity_date,
+    col19   AS original_ltv,
+    col20   AS original_cltv,
+    col21   AS number_of_borrowers,
+    col22   AS debt_to_income,
+    col23   AS borrower_credit_score,
+    col24   AS coborrower_credit_score,
+    col25   AS first_time_buyer,
+    col26   AS loan_purpose,
+    col27   AS property_type,
+    col28   AS number_of_units,
+    col29   AS occupancy_status,
+    col30   AS property_state,
+    col31   AS msa,
+    col32   AS zip_code_short,
+    col33   AS mi_percentage,
+    col34   AS amortization_type,
+    col35   AS prepayment_penalty,
+    col36   AS interest_only,
+    col39   AS current_loan_delinquency_status,
+    col41   AS modification_flag,
+    col43   AS zero_balance_code,
+    col44   AS zero_balance_effective_date,
+    col72   AS mi_type
+FROM individual_cw.fanniemaesharedunzipped123data;

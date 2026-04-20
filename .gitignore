@@ -1,0 +1,23 @@
+# OS / editor junk
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Word/Office temp files
+~$*
+*.tmp
+*.temp
+
+# Secrets (safety net)
+.env
+*.env
+secrets.txt
+aws_credentials.txt
+.aws/
+credentials
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
