@@ -1,6 +1,6 @@
 # Fannie Mae Loan Performance — Big Data Analysis on AWS
 
-MSc coursework for *Big Data Theory and Practice (7BDIN007C)* at Westminster International University in Tashkent. Uses AWS (S3, Athena, Glue, EMR) and PySpark / SparkSQL to analyse the **Fannie Mae Single-Family Loan Performance Dataset (2020–2025)** — approximately **569 million records**.
+Uses AWS (S3, Athena, Glue, EMR) and PySpark / SparkSQL to analyse the **Fannie Mae Single-Family Loan Performance Dataset (2020–2025)** — approximately **569 million records**.
 
 ## Project at a glance
 
@@ -13,7 +13,7 @@ MSc coursework for *Big Data Theory and Practice (7BDIN007C)* at Westminster Int
 | **Cluster** | EMR m5.xlarge, Spark 3.5.6 |
 | **Notebook** | JupyterHub on EMR master node |
 
-## Research questions (individual coursework)
+## Research questions
 
 1. **Does high DTI (>43%) combined with high CLTV (>80%) amplify 90+ day delinquency non-linearly, and how does it vary by state?**
 2. **Which loan servicers resolve delinquencies fastest ("cure"), and which let them escalate into serious delinquency ("roll")?**
@@ -47,7 +47,7 @@ The CSV to Parquet step reduced Athena scan cost by ~80-90% on subsequent querie
 .
 ├── README.md
 ├── .gitignore
-├── fannie_mae_project_Individual.docx   # My individual coursework report (full write-up)
+├── fannie_mae_project_Individual.docx   # Individual report (full write-up)
 ├── Group_Report.docx                    # Group report (see credits)
 ├── Group_Presentation.pptx              # Group presentation (see credits)
 ├── sql/                                 # All SQL scripts (Athena + SparkSQL)
@@ -56,7 +56,7 @@ The CSV to Parquet step reduced Athena scan cost by ~80-90% on subsequent querie
 
 Code is organised in the order it runs in the pipeline. File prefixes (01–20) follow execution order; the appendix label (SQL1.x, SparkSQL1.x, PySpark1.x) is preserved in the filename so you can cross-reference with the report.
 
-## Key findings (individual coursework)
+## Key findings
 
 ### Question 1 — Risk layering (DTI x CLTV)
 
@@ -81,9 +81,9 @@ Based on 548 million month-over-month transition records:
 
 ## Group work — credits
 
-The **group report** (`Group_Report.docx`) and **group presentation** (`Group_Presentation.pptx`) were completed collaboratively with three teammates as part of the same module. All four contributors did their own share of the work; different sections of both deliverables were led by different team members. The individual coursework in this repository (`fannie_mae_project_Individual.docx` plus the code in `sql/` and `pyspark/`) is my own work and extends the group foundation with the independent risk-layering and servicer-performance analyses described above.
+The **group report** (`Group_Report.docx`) and **group presentation** (`Group_Presentation.pptx`) were completed collaboratively with three teammates. All four contributors did their own share of the work; different sections of both deliverables were led by different team members. The individual report (`fannie_mae_project_Individual.docx`) plus the code in `sql/` and `pyspark/` is my own work and extends the group foundation with the independent risk-layering and servicer-performance analyses described above.
 
-Teammate student IDs (anonymised) and my own were redacted from the documents before publication. If you are one of my teammates and would like your name credited or the group documents removed, please contact me.
+Teammate identifiers were anonymised before publication. If you are one of my teammates and would like your name credited or the group documents removed, please contact me.
 
 ## Tech stack
 
@@ -96,8 +96,8 @@ AWS S3 · AWS Glue · Amazon Athena · Amazon EMR · PySpark 3.5.6 · SparkSQL �
 - EMR cluster config: m5.xlarge for master + core nodes
 - JupyterHub access requires opening TCP port 9443 on the master node's security group
 - Parquet conversion is the single most valuable optimisation — do it first
-- All code was originally written and run in a JupyterHub notebook on EMR; the `.sql` and `.py` files here are extracted from the coursework appendix verbatim
+- All code was originally written and run in a JupyterHub notebook on EMR; the `.sql` and `.py` files here are extracted verbatim
 
 ## Author
 
-**Mirfayzbek Sharipov** · MSc Business Intelligence & Analytics, WIUT · [LinkedIn](https://linkedin.com/in/mirfayzbek-sharipov/)
+**Mirfayzbek Sharipov** · [LinkedIn](https://linkedin.com/in/mirfayzbek-sharipov/)
